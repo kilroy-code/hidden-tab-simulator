@@ -1,0 +1,33 @@
+{
+  "name": "@kilroy-code/hidden-tab-simulator",
+  "version": "0.0.1",
+  "description": "Provides a function, simulateVisibility(isHidden), that can be used in unit tests to simulate a browser tab being hidden or being revealed.",
+  "keywords": [
+    "testing",
+    "browser",
+    "nodejs"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": {
+    "name": "Howard Stearns",
+    "email": "howard@ki1r0y.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kilroy-code/hidden-tab-simulator.git"
+  },
+  "homepage": "https://github.com/kilroy-code/hidden-tab-simulator#readme",
+  "bugs": {
+    "url": "https://github.com/kilroy-code/hidden-tab-simulator/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/kilroy-code"
+  },
+  "devDependencies": {
+    "jasmine": "^4.5.0"
+  }
+}
