@@ -1,5 +1,4 @@
 const IS_BROWSER = typeof document !== 'undefined';
-const CROQUET_MINIMUM_STATE_CHANGE_MS = 2000; // regardless of autoSleep and rejoinLimit
 const CHANGE_EVENT_NAME = 'visibilitychange';
 
 // NodeJS defines an internal EventTarget and Events, but does not expose them. Fortunately, our usage is trivial.
@@ -29,12 +28,12 @@ const EventClass = IS_BROWSER ? Event : class Event {
   constructor(type) { this.type = type; }
 };
 
-export function simulateVisibility(state, delay = CROQUET_MINIMUM_STATE_CHANGE_MS) {
+export function simulateVisibility(state) {
   // Same implimentation in browser and NodeJS.
   if (!['hidden', 'visible'].includes(state)) return Promise.reject('state should be one of: hidden, visible.');
 
   Object.defineProperty(hidableDocument, 'visibilityState', {value: state, writable: true});
   hidableDocument.dispatchEvent(new EventClass(CHANGE_EVENT_NAME));
-  return new Promise(resolve => setTimeout(_ => resolve(state === 'visible'), delay));
+  return Promise.resolve(state === 'visible');
 }
 

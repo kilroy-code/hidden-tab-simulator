@@ -6,11 +6,11 @@ It also abstracts out the API by which an implementation can respond to the tab 
 
 ## Exports
 
-### async simulateVisibility(state, delayInMilliseconds) => promise resolving to whether state is 'visible'.
+### async simulateVisibility(state) => promise resolving to whether state is 'visible'.
 
 Makes the browser's `document` (or this package's `hidableDocument` object) behave as if the tab had been hidden or visible, depending on state (which must be either the string 'hidden' or 'visible').
 
-The function does not resolve until `delayInMilliseconds` has passed. The default value is the amount of time that [Croquet](https://croquet.io/) might take before it responds to a revealed tab (currently 2 seconds).
+A promise is used because the browser may take a moment to respond. Waiting a tick ensures that this has happened.
 
 
 ### hidableDocument
