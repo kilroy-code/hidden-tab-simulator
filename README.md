@@ -1,4 +1,4 @@
-# Hidden-tab Simulator
+# Hidden-tab Simulator [![npm test](https://github.com/kilroy-code/hidden-tab-simulator/actions/workflows/npm-test.yml/badge.svg)](https://github.com/kilroy-code/hidden-tab-simulator/actions/workflows/npm-test.yml)
 
 Provides a function, `simulateVisibility(state)`, that can be used in unit tests to simulate a browser tab being hidden or being revealed.
 
